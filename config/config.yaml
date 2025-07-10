@@ -1,0 +1,15 @@
+labeling:
+  kcal_thresholds:
+    hard_cut: 0.85
+    cut: 0.95
+    maintain: 1.05
+    lean_bulk: 1.15
+  protein_per_kg:
+    low: 1.4
+    high: 2.0
+  fat_per_kg:
+    low: 0.8
+    high: 1.2
+  carb_per_kg:
+    low: 3.0
+    high: 5.0
