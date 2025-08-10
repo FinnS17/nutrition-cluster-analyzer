@@ -25,15 +25,15 @@ def auto_label_cluster(df, maintenance_kcal, bodyweight_kg, config):
         # Calories
         ratio = row["kcal"] / maintenance_kcal
         if ratio < kcal_thresholds["hard_cut"]:
-            parts.append("hohes Defizit")
+            parts.append("High Cut")
         elif ratio < kcal_thresholds["cut"]:
-            parts.append("moderates Defizit")
+            parts.append("Moderate Cut")
         elif ratio < kcal_thresholds["maintain"]:
-            parts.append("Erhaltungskalorien")
+            parts.append("Maintenance Calories")
         elif ratio < kcal_thresholds["lean_bulk"]:
-            parts.append("moderater Überschuss")
+            parts.append("Moderate Surplus")
         else:
-            parts.append("hoher Überschuss")
+            parts.append("High Surplus")
 
         # Protein
         protein_per_kg = row["protein_g"] / bodyweight_kg

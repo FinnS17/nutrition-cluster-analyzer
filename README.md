@@ -98,10 +98,10 @@ This allows for easy adjustment of what defines a surplus, deficit, or macro ran
 
 ## 📁 Input Format
 
-Your CSV file should include daily nutrition values. Supported column headers (case-insensitive and flexible):
+Your CSV file must contain nutrition values. Expected column headers (case-insensitive):
 
 - `Date`
-- `Dietary Energy (kJ)` — will be automatically converted to `kcal`
+- `Dietary Energy (kJ)`
 - `Protein (g)`
 - `Carbohydrates (g)`
 - `Total Fat (g)`
