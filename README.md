@@ -1,21 +1,20 @@
 # 🥗 Nutrition Cluster Analyzer
 
 A Streamlit-powered application to **analyze, cluster, and visualize daily nutrition data** using machine learning.  
-Upload your food tracking data (e.g. from Cronometer, Apple Health, etc.), and the app will detect common dietary patterns such as calorie surplus, protein distribution, and macronutrient balance.
+Upload your daily nutrition data ( or use the provided dataset) together with personal information like your weight and maintenance calories. If you don’t know your maintenance calories, the app can estimate them for you. It will then analyze, cluster, and label your days based on your dietary patterns.
 
 ---
 
 ## 🚀 Features
 
 
-✅ Upload your own CSV nutrition data  
-✅ Automatically preprocess and normalize data  
+✅ Upload your own CSV nutrition data   
 ✅ Calorie need calculation (Harris-Benedict formula)  
 ✅ KMeans clustering with optimal `k` selection  
 ✅ Automatic labeling of eating patterns  
 ✅ Visual summaries of the patterns found  
 ✅ Optional dataframe output with cluster assignments  
-✅ Configurable thresholds via `config.yaml`  
+✅ Configurable labeling thresholds via `config.yaml`  
 
 ---
 
@@ -120,18 +119,17 @@ streamlit run src/app.py
 ## 💡 Example Use Cases
 
 - Personal diet pattern recognition  
-- Diet coaching insights  
-- Detecting trends over weeks/months  
+- Diet coaching insights 
 - Identifying inconsistent nutrition behavior  
 
 ---
 
 ## 🛠️ Technologies Used
 
-- Python 🐍  
-- Streamlit 🌐  
-- Pandas / Scikit-learn 📊  
-- Matplotlib / Seaborn 📈  
+- Python  
+- Streamlit 
+- Pandas / Scikit-learn 
+- Matplotlib / Seaborn
 - YAML config support  
 
 ---
@@ -139,8 +137,7 @@ streamlit run src/app.py
 ## 📌 To-Do / Future Improvements
 
 - Add trend detection over time  
-- Enable filtering by weekday or training day  
-- Add import for Apple Health & Cronometer JSON formats  
+- Enable filtering by weekday or training day   
 - Export summary PDF or dashboard  
 
 ---
