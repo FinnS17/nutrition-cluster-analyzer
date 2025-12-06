@@ -1,24 +1,23 @@
-# 🥗 Nutrition Cluster Analyzer
+# Nutrition Cluster Analyzer
 
 A Streamlit-powered application to **analyze, cluster, and visualize daily nutrition data** using machine learning.  
-Upload your daily nutrition data ( or use the provided dataset) together with personal information like your weight and maintenance calories. If you don’t know your maintenance calories, the app can estimate them for you. It will then analyze, cluster, and label your days based on your dietary patterns.
+Upload your daily nutrition data ( or use the provided dataset) together with personal information like your weight and maintenance calories. If you don't know your maintenance calories, the app can estimate them for you. It will then analyze, cluster, and label your days based on your dietary patterns.
 
 ---
 
-## 🚀 Features
+## Features
 
-
-✅ Upload your own CSV nutrition data   
-✅ Calorie need calculation (Harris-Benedict formula)  
-✅ KMeans clustering with optimal `k` selection  
-✅ Automatic labeling of eating patterns  
-✅ Visual summaries of the patterns found  
-✅ Optional dataframe output with cluster assignments  
-✅ Configurable labeling thresholds via `config.yaml`  
+- Upload your own CSV nutrition data   
+- Calorie need calculation (Harris-Benedict formula)  
+- KMeans clustering with optimal `k` selection  
+- Automatic labeling of eating patterns  
+- Visual summaries of the patterns found  
+- Optional dataframe output with cluster assignments  
+- Configurable labeling thresholds via `config.yaml`  
 
 ---
 
-## 📊 Example Output
+## Example Output
 
 > The app identifies typical daily patterns such as:
 
@@ -33,7 +32,7 @@ You’ll see:
 
 ---
 
-## 📸 Demo
+## Demo
 
 Here’s how the app looks in action:
 
@@ -43,7 +42,7 @@ Here’s how the app looks in action:
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 nutrition-cluster-analyzer/
@@ -71,11 +70,11 @@ nutrition-cluster-analyzer/
 │   └── debug.py                            ← Dev/testing script (optional)
 │
 ├── requirements.txt                        ← Python dependencies
-└── README.md                               ← You’re reading it!
+└── README.md                               ← You're reading it!
 ```
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 All thresholds for labeling (e.g., what counts as "low fat") are defined in:
 
@@ -85,7 +84,7 @@ This allows for easy adjustment of what defines a surplus, deficit, or macro ran
 
 ---
 
-## 🧠 Clustering & Labeling Logic
+## Clustering and Labeling Logic
 
 - **Clustering:** KMeans with standardized features (`kcal`, macronutrient percentages)  
 - **Optimal k:** Determined using the Elbow method (`kneed` library)  
@@ -95,7 +94,7 @@ This allows for easy adjustment of what defines a surplus, deficit, or macro ran
 
 ---
 
-## 📁 Input Format
+## Input Format
 
 Your CSV file must contain nutrition values. Expected column headers (case-insensitive):
 
@@ -107,16 +106,16 @@ Your CSV file must contain nutrition values. Expected column headers (case-insen
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
-### 🖥️ Start the app
+### Start the app
 ```bash
 streamlit run src/app.py
 ```
 
 ---
 
-## 💡 Example Use Cases
+## Example Use Cases
 
 - Personal diet pattern recognition  
 - Diet coaching insights 
@@ -124,7 +123,7 @@ streamlit run src/app.py
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - Python  
 - Streamlit 
@@ -134,7 +133,7 @@ streamlit run src/app.py
 
 ---
 
-## 📌 To-Do / Future Improvements
+## To-Do / Future Improvements
 
 - Add trend detection over time  
 - Enable filtering by weekday or training day   
@@ -142,13 +141,13 @@ streamlit run src/app.py
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Feel free to fork and adapt the labeling logic or clustering approach to your use case.  
 Pull requests are welcome!
 
 ---
 
-## 📄 License
+## License
 
-MIT License – use freely for personal or commercial projects.
+MIT License - use freely for personal or commercial projects.
