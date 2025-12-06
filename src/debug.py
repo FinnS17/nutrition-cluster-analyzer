@@ -1,3 +1,6 @@
+import os
+import yaml
+
 from main import run_pipeline
 from labeling import auto_label_cluster
 from clustering import find_optimal_k
@@ -10,5 +13,9 @@ Not used in production or the Streamlit app.
 """
 
 df = load_data("data/HealthAutoExport-2025-06-06-2025-07-06 2.csv")
-df_labeled, cluster_labels, best_k = run_pipeline(df, 3000, 85)
+config_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "config", "config.yaml"))
+with open(config_path, "r") as f:
+    config = yaml.safe_load(f)
+
+df_labeled, cluster_labels, best_k = run_pipeline(df, 3000, 85, config)
 print(df_labeled['protein_g'])  
