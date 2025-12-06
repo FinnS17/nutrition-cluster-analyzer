@@ -32,17 +32,25 @@ def find_optimal_k(X_scaled, k_range=(2, 8)):
     Returns:
     - int: The optimal number of clusters.
     """
+    n_samples = len(X_scaled)
+    if n_samples == 0:
+        raise ValueError("Cannot cluster an empty dataset.")
+
+    # Respect dataset size to avoid KMeans errors on tiny inputs.
+    max_k = max(1, min(k_range[1], n_samples))
+    min_k = min(max_k, max(1, k_range[0]))
+
     inertias = []
-    ks = list(range(k_range[0], k_range[1] + 1))
+    ks = list(range(min_k, max_k + 1))
 
     for k in ks:
-        kmeans = KMeans(n_clusters=k, random_state=42)
+        kmeans = KMeans(n_clusters=k, random_state=42, n_init="auto")
         kmeans.fit(X_scaled)
         inertias.append(kmeans.inertia_)
 
     # Determine elbow point
     kl = KneeLocator(ks, inertias, curve="convex", direction="decreasing")
-    optimal_k = kl.elbow
+    optimal_k = kl.elbow or ks[0]  # KneeLocator can return None for flat curves.
 
     # Optional visualization:
     # plt.plot(ks, inertias, marker='o')
